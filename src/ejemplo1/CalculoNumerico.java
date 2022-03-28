@@ -7,13 +7,13 @@ import java.io.InputStreamReader;
 public class CalculoNumerico {
 	public static void main(String[] args) throws IOException {
 		
-		System.out.println("Ingrese el primer numero: ");
+		System.out.println("Por favor ingrese el primer numero: ");
 		Integer numero1 = cargarNumero();
 		
-		System.out.println("Ingrese el segundo numero: ");
+		System.out.println("Por favor ingrese el segundo numero: ");
 		Integer numero2 = cargarNumero();
 		
-		System.out.println("Ingrese el tercer numero: ");
+		System.out.println("Por favor ingrese el tercer numero: ");
 		Integer numero3 = cargarNumero();
 		
 		CalcularNumeroMayor(numero1, numero2, numero3);
