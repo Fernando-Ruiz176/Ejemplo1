@@ -2,6 +2,7 @@ package ejemplo1;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.FileWriter;
 import java.io.InputStreamReader;
 
 public class CalculoNumerico {
@@ -18,6 +19,9 @@ public class CalculoNumerico {
 		
 		CalcularNumeroMayor(numero1, numero2, numero3);
 		CalcularNumeroMenor(numero1, numero2, numero3);	
+		
+		crearArchivoCsv();
+		generarContenidoArchivoCSV();
 	}
 	
 	private static Integer cargarNumero() throws IOException {
@@ -57,6 +61,30 @@ public class CalculoNumerico {
 		
 		System.out.println("El numero menor es: " + numeroMenor);
 	
+	}
+	
+	private static void crearArchivoCsv() {
+		String nombreArchivo           = "reporte-20220410.csv";
+		String contenidoArchivoReporte = generarContenidoArchivoCSV();
+		
+		try {
+			FileWriter writer = new FileWriter ( nombreArchivo);
+			writer.write( contenidoArchivoReporte );
+			writer.close();
+		} catch (IOException ioe) {
+			System.out.println("Hubo un problema al escribir el reporte.");
+			System.out.println("Contacte con el administrador.");
+		}
+	}
+	
+	private static String generarContenidoArchivoCSV() {
+		
+		String cabeceraCSV      = "n1,n2,n3";
+		String contenidoArchivo = cabeceraCSV + "\n";
+		contenidoArchivo += "";
+		contenidoArchivo += "";
+		
+		return contenidoArchivo;
 	}
 	
 }
